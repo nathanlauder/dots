@@ -1,19 +1,14 @@
-
 ZSH_DISABLE_COMPFIX="true"
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/nathanlauder/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 #path to scripts
 export PATH=$PATH:~/scripts
 
 export GITHUB_USERNAME="nathanlauder"
 
-
 # install a theme
 ZSH_THEME="nathanLauder"
-#ZSH_HIGHLIGHT_STYLES[alias]='fg=#5bfbc2,bold'
-#ZSH_HIGHLIGHT_STYLES[command]='fg=#5bfbc2,bold'
-#ZSH_THEME="amuse"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -30,37 +25,40 @@ plugins=(
   extract
   sublime
 )
+
 source $ZSH/oh-my-zsh.sh
 source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias rc="vim ~/.zshrc"
 alias vrc="vim ~/.vimrc"
 
-# z extension for navigating directories
-. ~/z.sh
-
-# aliases
-alias update="source ~/.zshrc"
-alias gcm="git checkout master"
-alias up="cd .."
-alias yt="youtube"
+# Navigation
 alias desk="cd ~/Desktop"
+alias up="cd .."
 alias down="cd ~/Downloads"
 alias home="cd ~"
-alias py="python3"
+alias cs="cd ~/Desktop/CompSci"
+alias ds="cd ~/Desktop/DataScience"
 alias apps="/Applications"
-#alias pip3="python3 -m pip"
-#alias pip="pip3"
-alias sleep="pmset sleepnow"
-alias ftemp="/usr/local/bin/./osx-cpu-temp -F"
-alias ctemp="/usr/local/bin/./osx-cpu-temp -C"
-alias spice="spicetify backup apply"
-alias calc="bc"
-alias caff="caffeinate -d"
 alias site="cd ~/Desktop/ExtraProjects/Personal\ Website"
 alias screenshots="cd ~/Desktop/Screenshots"
 alias track="cd ~/Desktop/CompSci/599Capstone/final-project"
 alias ta="cd ~/Desktop/CompSci/121\ CompSci\ Thinking/TAFiles"
 alias extras="cd ~/Desktop/ExtraProjects"
+
+# aliases
+alias update="source ~/.zshrc"
+alias yt="youtube"
+alias py="python3"
+#alias pip3="python3 -m pip"
+#alias pip="pip3"
+alias sleep="pmset sleepnow"
+alias ftemp="/usr/local/bin/./osx-cpu-temp -F"
+alias ctemp="/usr/local/bin/./osx-cpu-temp -C"
+#alias spice="spicetify backup apply"
+alias calc="bc"
+alias caff="caffeinate -d"
+alias qr="curl qrcode.show -d"
+
 
 # npm aliases
 alias start="npm start"
@@ -68,16 +66,11 @@ alias build="npm run build"
 alias serve="npm run start:server"
 alias start-client="npm run start-client"
 
+# Applications
 alias spot="open /Applications/Spotify.app"
 alias ff="open /Applications/Firefox.app"
 alias slack="open /Applications/Slack.app"
 alias R="open /Applications/RStudio.app"
-alias cs="cd ~/Desktop/CompSci"
-alias ds="cd ~/Desktop/DataScience"
-alias qr="curl qrcode.show -d"
-
-# looking at own IP Address
-alias myip="~/whereAmI/findmepls.sh"
 
 # seeing usage on the disk of the specific folder/path
 alias storage="du -h -d1"
