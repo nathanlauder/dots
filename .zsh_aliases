@@ -1,0 +1,60 @@
+alias rc="vim ~/.zshrc"
+alias vrc="vim ~/.vimrc"
+# alias ls="ls -A"
+alias wttr='curl wttr.in/$1'
+
+# navigating
+alias repos="cd ~/Desktop/repos"
+
+# aliases
+alias update="source ~/.zshrc"
+alias gcm="git checkout master"
+alias up="cd .."
+alias yt="youtube"
+alias desk="cd ~/Desktop"
+alias down="cd ~/Downloads"
+alias home="cd ~"
+alias py="python3"
+alias apps="/Applications"
+#alias pip3="python3 -m pip"
+#alias pip="pip3"
+alias sleep="pmset sleepnow"
+alias calc="bc"
+alias caff="caffeinate -d"
+
+# npm aliases
+alias start="npm start"
+alias build="npm run build"
+alias serve="npm run start:server"
+alias start-client="npm run start-client"
+
+alias qr="curl qrcode.show -d"
+
+
+# seeing usage on the disk of the specific folder/path
+alias storage="du -h -d1"
+alias topten="history | commands | sort -rn | head"
+# open current director in file explorer
+alias owd="ofd" 
+alias rd="rm -r"
+
+# git aliases
+alias gf="git fetch"
+alias ga="git add"
+alias gcom="git commit -m"
+alias gp="git push origin"
+# branches
+alias gst="git status" # branch status
+alias gba="git branch -a"
+alias gc="git checkout" # switch
+alias gcb="git checkout -b" # create branch and switch to it
+alias gbd="git branch -d" # branch delete
+alias gbD="git branch -D" # force branch delete
+alias gpd="git push origin --delete" # push commit of branch deletion
+
+alias gd="git diff"
+alias gpl="git pull origin"
+alias unstage="git restore --staged"
+alias gl="git log"
+alias gm="git merge"
+alias ggraph="git log --graph --pretty=\"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --all"
