@@ -12,6 +12,7 @@ ZSH_THEME="nathanLauder"
 #ZSH_HIGHLIGHT_STYLES[alias]='fg=#5bfbc2,bold'
 #ZSH_HIGHLIGHT_STYLES[command]='fg=#5bfbc2,bold'
 #ZSH_THEME="amuse"
+#
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
