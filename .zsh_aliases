@@ -1,24 +1,38 @@
-alias rc="vim ~/.zshrc"
-alias vrc="vim ~/.vimrc"
-# alias ls="ls -A"
-alias wttr='curl wttr.in/$1'
-
-# navigating
-alias repos="cd ~/Desktop/repos"
-
-# aliases
-alias update="source ~/.zshrc"
-alias gcm="git checkout master"
+# navigation aliases
 alias up="cd .."
-alias yt="youtube"
 alias desk="cd ~/Desktop"
 alias down="cd ~/Downloads"
 alias home="cd ~"
+alias repos="cd ~/Desktop/GitHub"
+alias site="cd ~/Desktop/ExtraProjects/Personal\ Website"
+alias screenshots="cd ~/Desktop/Screenshots"
+alias track="cd ~/Desktop/GitHub/classtrack"
+alias extras="cd ~/Desktop/ExtraProjects"
+alias cs="cd ~/Desktop/CompSci"
+alias ds="cd ~/Desktop/DataScience"
+
+# aliases
+alias rc="vim ~/.zshrc"
+alias vrc="vim ~/.vimrc && vim +PlugInstall +qall"
+alias v="vim"
+alias aliases="vim ~/.zsh_aliases && source $HOME/.zshrc"
+alias lsa="ls -A"
+alias ll="ls -l"
+alias lsla="la -lA"
+alias wttr='curl wttr.in/$1'
+
+alias esfix="eslint --fix"
+
+alias src="source ~/.zshrc"
+alias gcm="git checkout master"
+alias yt="youtube"
 alias py="python3"
 alias apps="/Applications"
 #alias pip3="python3 -m pip"
 #alias pip="pip3"
-alias sleep="pmset sleepnow"
+alias ftemp="/usr/local/bin/./osx-cpu-temp -F"
+alias ctemp="/usr/local/bin/./osx-cpu-temp -C"
+alias spice="spicetify backup apply"
 alias calc="bc"
 alias caff="caffeinate -d"
 
@@ -28,17 +42,25 @@ alias build="npm run build"
 alias serve="npm run start:server"
 alias start-client="npm run start-client"
 
+alias spot="open /Applications/Spotify.app"
+alias ff="open /Applications/Firefox.app"
+alias slack="open /Applications/Slack.app"
+alias R="open /Applications/RStudio.app"
 alias qr="curl qrcode.show -d"
-
 
 # seeing usage on the disk of the specific folder/path
 alias storage="du -h -d1"
 alias topten="history | commands | sort -rn | head"
 # open current director in file explorer
 alias owd="ofd" 
-alias rd="rm -r"
+alias rd="rm -rf"
+
+# bin <-> conversions
+alias jsBinInt="echo 'let binary=0001\nparseInt(binary, 2)' && node"
+alias jsIntBin="echo 'let integer=7\ninteger.toString(2)' && node"
 
 # git aliases
+# you can grab a single file from a repo with $ curl https://raw.githubusercontent.com/github/gitignore/main/Rust.gitignore
 alias gf="git fetch"
 alias ga="git add"
 alias gcom="git commit -m"
@@ -54,7 +76,23 @@ alias gpd="git push origin --delete" # push commit of branch deletion
 
 alias gd="git diff"
 alias gpl="git pull origin"
+alias grst="git reset"
 alias unstage="git restore --staged"
 alias gl="git log"
+alias glp="git log -p"
 alias gm="git merge"
 alias ggraph="git log --graph --pretty=\"%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\" --all"
+
+# ... functions? yes
+
+# make a gif? yes plz
+# alias giffy="ffmpeg -i $1 -pix_fmt rgb8 -r 10 $2 && gifsicle -03 $2 -o $2"
+function makegif() {
+  if [ "$#" -ne 1 ]; then
+    echo "Command takes 1 arg. Expected: name of file."
+    return 1;
+  else
+    ffmpeg -i "$1".mov -pix_fmt rgb8 -r 10 "$1".gif && gifsicle -03 "$1".gif -o "$1".gif
+  fi
+}
+
