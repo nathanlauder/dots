@@ -11,8 +11,8 @@
 -- vim.opt.list = true
 -- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
@@ -27,7 +27,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
@@ -37,7 +37,7 @@ vim.opt.showmode = false
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+	vim.opt.clipboard = "unnamedplus"
 end)
 
 -- Enable break indent
@@ -51,7 +51,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+vim.opt.signcolumn = "yes"
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -68,14 +68,14 @@ vim.opt.splitbelow = true
 --  and `:help 'listchars'`
 vim.opt.list = true
 vim.opt.listchars = {
-  tab = '» ',
-  -- eol = '↵',
-  trail = '·',
-  nbsp = '␣'
+	tab = "» ",
+	-- eol = '↵',
+	trail = "·",
+	nbsp = "␣",
 }
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
@@ -90,12 +90,21 @@ vim.opt.softtabstop = 4
 
 require("config.lazy")
 
+vim.api.nvim_set_keymap("n", "<Leader>o", ":Oil<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>vo", ":vsplit+Oil<CR>", { noremap = true, silent = true })
+
+vim.api.nvim_create_user_command("Scratch", function()
+	vim.cmd("enew")
+	vim.bo.buftype = "nofile"
+	vim.bo.bufhidden = "hide"
+	vim.bo.swapfile = false
+end, {})
 -- Autocmd to trigger the function on VimEnter event
-vim.api.nvim_create_autocmd("VimEnter", {
-  callback = function()
-    local empty_buffer = vim.api.nvim_buf_get_name(0) == ""
-    if empty_buffer then
-      vim.cmd("Neotree reveal right")
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   callback = function()
+--     local empty_buffer = vim.api.nvim_buf_get_name(0) == ""
+--     if empty_buffer then
+--       vim.cmd("Neotree reveal right")
+--     end
+--   end,
+-- })

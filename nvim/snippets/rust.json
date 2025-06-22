@@ -1,0 +1,13 @@
+{
+  "Seed Data": {
+    "prefix": "seed",
+    "body": [
+      "data.push(",
+      "\tData::new(\"${1:houseName}\",",
+      "\tvec![",
+      "\t\t$0",
+      "\t]",
+      "));"
+    ]
+  }
+}
